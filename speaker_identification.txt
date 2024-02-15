@@ -1,0 +1,120 @@
+import os
+import librosa
+import pandas as pd
+import numpy as np
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import LabelEncoder
+from tensorflow.keras import layers, models
+
+def extract_features(file_path, mfcc=True, chroma=True, mel=True):
+    """
+    Function to extract audio features from an audio file.
+
+    Parameters:
+    - file_path (str): Path to the audio file.
+    - mfcc (bool): Whether to include MFCCs.
+    - chroma (bool): Whether to include chroma features.
+    - mel (bool): Whether to include mel spectrogram features.
+
+    Returns:
+    - features (np.ndarray): Extracted features.
+    """
+    try:
+        audio, sr = librosa.load(file_path, sr=None)
+        features = []
+        if mfcc:
+            mfccs = librosa.feature.mfcc(y=audio, sr=sr, n_mfcc=20)
+            features.extend(np.mean(mfccs.T, axis=0))
+        if chroma:
+            chroma = librosa.feature.chroma_stft(y=audio, sr=sr)
+            features.extend(np.mean(chroma.T, axis=0))
+        if mel:
+            mel = librosa.feature.melspectrogram(y=audio, sr=sr)
+            features.extend(np.mean(mel.T, axis=0))
+        return features
+    except Exception as e:
+        print("Error encountered while parsing file: ", file_path)
+        return None
+
+def load_data(data_path, mfcc=True, chroma=True, mel=True):
+    """
+    Function to load audio data and corresponding labels from a specified directory.
+
+    Parameters:
+    - data_path (str): Path to the directory containing audio files.
+    - mfcc (bool): Whether to include MFCCs.
+    - chroma (bool): Whether to include chroma features.
+    - mel (bool): Whether to include mel spectrogram features.
+
+    Returns:
+    - X (np.ndarray): Features array.
+    - y (list): Labels list.
+    """
+    X, y = [], []
+    for dirpath, dirnames, filenames in os.walk(data_path):
+        if os.path.basename(dirpath) == '_background_noise_':
+            continue  # Skip processing files in the "_background_noise_" directory
+        for filename in filenames:
+            file_path = os.path.join(dirpath, filename)
+            label = os.path.basename(dirpath)
+            features = extract_features(file_path, mfcc=mfcc, chroma=chroma, mel=mel)
+            if features is not None:
+                X.append(features)
+                y.append(label)
+    return np.array(X), y
+
+# Load data
+data_path = r'C:\Users\jishn\OneDrive\Desktop\Speakerr\16000_pcm_speeches'
+
+X, y = load_data(data_path)
+
+# Encode labels
+label_encoder = LabelEncoder()
+y = label_encoder.fit_transform(y)
+
+# Split data into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Define a simple neural network model
+model = models.Sequential([
+    layers.Dense(256, activation='relu', input_shape=(X_train.shape[1],)),
+    layers.Dense(128, activation='relu'),
+    layers.Dense(len(np.unique(y)), activation='softmax')
+])
+
+# Compile the model
+model.compile(optimizer='adam',
+              loss='sparse_categorical_crossentropy',
+              metrics=['accuracy'])
+
+# Train the model
+history = model.fit(X_train, y_train, epochs=50, batch_size=32, validation_split=0.2)
+
+# Evaluate the model
+test_loss, test_acc = model.evaluate(X_test, y_test)
+print('Test Accuracy:', test_acc)
+
+def display_training_history(history):
+    # Convert the training history to a DataFrame
+    history_df = pd.DataFrame(history.history)
+    
+    # Display the DataFrame
+    print(history_df)
+    
+    # Get the final test accuracy
+    test_accuracy = history_df['val_accuracy'].iloc[-1]
+    print('Final Test Accuracy:', test_accuracy)
+
+if __name__ == "__main__":
+    # Load training history from file or from memory
+    # history = load_training_history()
+    # Assuming 'history' is already available
+    # Display training history and test accuracy
+    display_training_history(history)
+    # Train the model
+history = model.fit(X_train, y_train, epochs=50, batch_size=32, validation_split=0.2)
+# Save the label encoder to a file
+np.save('label_encoder.npy', label_encoder.classes_)
+
+
+

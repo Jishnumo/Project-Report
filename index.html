@@ -244,10 +244,37 @@
         <h1>Download <span>Code</span></h1>
         <p class="iii1">For downloading the code click the button below:</p>
         <div class="c">
-        <button><a href="">Download</a></button>
+        <button id="downloadButton">Download</button>
         </div>
         </div>
       </div>
+      <script>
+// List of files to be downloaded
+var filesToDownload = ["speaker_identification.txt", "output.txt"];
+
+// JavaScript to handle the download
+document.getElementById("downloadButton").addEventListener("click", function() {
+  downloadFiles(filesToDownload);
+});
+// Function to initiate the download of multiple files
+function downloadFiles(files) {
+  // Iterate over the array of file names
+  files.forEach(function(fileName) {
+    // Create an <a> element
+    var link = document.createElement("a");
+    // Set the href attribute with the file name
+    link.href = fileName;
+    // Set the download attribute with the file name
+    link.download = fileName;
+    // Append the <a> element to the document body
+    document.body.appendChild(link);
+    // Simulate a click on the <a> element to trigger the download
+    link.click();
+    // Remove the <a> element from the document body
+    document.body.removeChild(link);
+  });
+}
+</script>
       <div class="con">
         <h1>Conclusion</h1>
         <p class="ii22">The Speaker Recognition system has exhibited exceptional performance in accurately identifying speakers from audio recordings. The system's high training, validation, test, and final test accuracies demonstrate its efficacy and reliability for speaker recognition tasks. The consistent high accuracies across different evaluation stages underscore the model's robustness and effectiveness.
