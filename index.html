@@ -12,8 +12,8 @@
       <h1>Report</h1>
       <ul>
         <li><a href="#one">Home</a></li>
-        <li><a href="#">Dataset</a></li>
-        <li><a href="#">Setup</a></li>
+        <li><a href="#two">Dataset</a></li>
+        <li><a href="#three">Setup</a></li>
         <li><a href="#">Performance</a></li>
       </ul>
     </nav>
@@ -38,11 +38,11 @@
           practical use in security, telecommunications, and personalized user
           experiences.
         </p>
-        <button>Know more</button>
+        <button><a href="#teamm">Know more</a></button>
       </div>
       <div class="i"></div>
     </header>
-    <section class="team">
+    <section class="team" id="teamm">
       <h1>Team<span> details</span></h1>
       <div class="t">
         <div class="t1">
@@ -70,7 +70,7 @@
         </div>
       </div>
     </section>
-    <section class="dataset">
+    <section class="dataset" id="two">
       <h1>Dataset <span>Details</span></h1>
       <p class="io">
         The Speaker Recognition system's training dataset was procured from the
@@ -106,7 +106,7 @@
           supervised learning during model training and evaluation.
         </p>
         <h2>Preparing the <span>dataset</span></h2>
-        <p class="i2">
+        <p class="i22">
           The Speaker Recognition system is first trained on a pre-processed
           dataset to ensure that it is compatible with the model architecture
           and training process. To convert audio recordings into numerical
@@ -117,13 +117,36 @@
           identification.
         </p>
         <h2>Dataset <span>Split</span></h2>
-        <p class="i3">
+        <p class="i33">
           The dataset is usually split into two separate sets, namely, training
           and testing sets. This division enables the model to be trained and
           evaluated more efficiently. Normally, around 80% of the dataset is
           assigned to the training set while the remaining part is used for
           testing. Randomization techniques can be employed to ensure that the
           distribution of speakers in the training and testing sets is unbiased.
+        </p>
+        <h2>Incorporating <span>Background Noise</span></h2>
+        <p class="i44">
+          To make the system more resilient and useful in real-world situations,
+          we have included background noise recordings in the dataset. These
+          recordings simulate different acoustic environments and environmental
+          conditions that the system might come across while in use. By training
+          on a varied set of audio samples, which includes both speech and
+          background noise, the system can differentiate between relevant speech
+          signals and extraneous noise, resulting in better performance in
+          practical scenarios.
+        </p>
+      </div>
+      <div class="method" id="three">
+        <h1>Method or <span>Experimental Setup</span></h1>
+        <h2>Feature <span>Extraction</span></h2>
+        <p class="i222">
+          Through the utilization of the librosa library in Python, pertinent
+          audio features can be extracted from raw audio recordings. These
+          features include Mel-Frequency Cepstral Coefficients (MFCCs), chroma
+          features, and mel spectrogram features. These characteristics are
+          pivotal in capturing crucial aspects of the speaker's voice and can
+          act as input parameters for the machine learning model.
         </p>
       </div>
     </section>

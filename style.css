@@ -83,6 +83,15 @@ header button:hover {
   transition: ease-in;
   transition-duration: 0.5s;
 }
+header a {
+  text-decoration: none;
+  color: white;
+}
+header button:hover a {
+  text-decoration: none;
+  color: rgba(26, 26, 208, 0.857);
+  font-weight: bold;
+}
 section.team .img {
   height: 250px;
   width: 250px;
@@ -137,7 +146,6 @@ section.team h1 {
 }
 .dataset h2 {
   font-size: 1.01rem;
-  text-align: center;
 }
 .dataset button {
   height: 40px;
@@ -179,13 +187,22 @@ section.team h1 {
   margin: 2.3rem;
   font-weight: bolder;
 }
-.dataset p.i2 {
+.dataset p.i22 {
   text-align: center;
   font-size: 1.03rem;
   padding: 15px 20px;
 }
-.dataset p.i3 {
+.dataset p.i33 {
   text-align: center;
+  font-size: 1.03rem;
+  padding: 15px 20px;
+}
+.dataset p.i44 {
+  text-align: center;
+  font-size: 1.03rem;
+  padding: 15px 20px;
+}
+.i222 {
   font-size: 1.03rem;
   padding: 15px 20px;
 }
