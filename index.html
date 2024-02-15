@@ -71,8 +71,8 @@
       </div>
     </section>
     <section class="dataset">
-      <h1>Dataset Details</h1>
-      <p>
+      <h1>Dataset <span>Details</span></h1>
+      <p class="io">
         The Speaker Recognition system's training dataset was procured from the
         reputable data science platform, Kaggle. The dataset comprises a
         comprehensive suite of audio recordings featuring voice samples from
@@ -81,8 +81,51 @@
         others. The dataset also includes background noise recordings to emulate
         real-world scenarios, thereby enhancing the system's robustness. The
         dataset's size and diversity make it an invaluable resource for training
-        and testing speaker recognition models.
+        and testing speaker recognition models. The link for the dataset
+        download is given below.
       </p>
+      <div class="b">
+        <button>
+          <a
+            href="https://www.kaggle.com/datasets/kongaevans/speaker-recognition-dataset"
+            >Link</a
+          >
+        </button>
+      </div>
+      <h2>Key Dataset <span>Characteristics</span></h2>
+      <div class="nnn">
+        <p class="iii">
+          •Source: Kaggle <br />•Content: Political voice samples & background
+          noise recordings. <br />•The audio format used is PCM. <br />•The
+          sampling rate of the audio is 16,000 Hz. <br />
+          •The dataset includes speakers of different genders, nationalities,
+          accents, and speech patterns to ensure the system’s ability to
+          generalize across diverse demographics. <br />
+          • Each audio recording is labelled with the corresponding speaker’s
+          identity or designated as background noise, which helps with
+          supervised learning during model training and evaluation.
+        </p>
+        <h2>Preparing the <span>dataset</span></h2>
+        <p class="i2">
+          The Speaker Recognition system is first trained on a pre-processed
+          dataset to ensure that it is compatible with the model architecture
+          and training process. To convert audio recordings into numerical
+          representations, feature extraction techniques such as MFCCs, chroma
+          features, and mel spectrograms are used. These features capture
+          important characteristics of the speakers' voices, making it possible
+          for the system to learn discriminative patterns for speaker
+          identification.
+        </p>
+        <h2>Dataset <span>Split</span></h2>
+        <p class="i3">
+          The dataset is usually split into two separate sets, namely, training
+          and testing sets. This division enables the model to be trained and
+          evaluated more efficiently. Normally, around 80% of the dataset is
+          assigned to the training set while the remaining part is used for
+          testing. Randomization techniques can be employed to ensure that the
+          distribution of speakers in the training and testing sets is unbiased.
+        </p>
+      </div>
     </section>
   </body>
 </html>

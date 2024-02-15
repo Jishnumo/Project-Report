@@ -120,3 +120,72 @@ section.team h1 {
 .team {
   height: 80vh;
 }
+.dataset {
+  height: 100vh;
+}
+.dataset h1 {
+  text-align: center;
+  font-weight: bolder;
+  font-family: "Rubik Burned", system-ui;
+  font-size: 2.2rem;
+  margin-top: 3rem;
+}
+.dataset p.io {
+  text-align: center;
+  font-size: 1.03rem;
+  padding: 15px 20px;
+}
+.dataset h2 {
+  font-size: 1.01rem;
+  text-align: center;
+}
+.dataset button {
+  height: 40px;
+  width: 135px;
+  background-color: rgba(26, 26, 208, 0.857);
+  color: white;
+  text-align: center;
+  font-size: 1.05rem;
+}
+.b {
+  display: flex;
+  justify-content: center;
+}
+.dataset button:hover {
+  border-color: rgba(26, 26, 208, 0.857);
+  background-color: white;
+  color: rgba(26, 26, 208, 0.857);
+  font-size: 1.06rem;
+  transition: ease-in;
+  transition-duration: 0.5s;
+}
+.dataset a {
+  text-decoration: none;
+  color: white;
+}
+.dataset button:hover a {
+  text-decoration: none;
+  color: rgba(26, 26, 208, 0.857);
+  font-weight: bold;
+}
+.dataset .iii {
+  font-size: 1.03rem;
+  padding: 0 20px;
+  margin-top: 2rem;
+  line-height: 20px;
+}
+.dataset h2 {
+  font-size: 1.8rem;
+  margin: 2.3rem;
+  font-weight: bolder;
+}
+.dataset p.i2 {
+  text-align: center;
+  font-size: 1.03rem;
+  padding: 15px 20px;
+}
+.dataset p.i3 {
+  text-align: center;
+  font-size: 1.03rem;
+  padding: 15px 20px;
+}
