@@ -117,3 +117,6 @@ section.team h1 {
 .team h3 {
   text-align: center;
 }
+.team {
+  height: 80vh;
+}
