@@ -65,6 +65,7 @@ header .i {
   height: 400px;
   width: 400px;
   border-radius: 100%;
+  box-shadow: 8px 10px 18px rgba(0, 0, 0, 0.3);
 }
 header button {
   height: 40px;
@@ -95,6 +96,7 @@ section.team .img {
   height: 250px;
   width: 250px;
   border-radius: 100%;
+  box-shadow: 8px 10px 18px rgba(0, 0, 0, 0.3);
 }
 .t {
   display: flex;
@@ -107,7 +109,7 @@ section.team .img {
   background-size: cover;
 }
 .i2 {
-  background-image: url("");
+  background-image: url("WhatsApp\ Image\ 2024-02-15\ at\ 22.44.42.jpeg");
   background-position: center;
   background-size: cover;
 }
@@ -226,4 +228,52 @@ section.team h1 {
 }
 .con {
   height: 35vh;
+}
+.video-container {
+  width: 550px; /* Set a fixed width for the video container */
+  height: 300px; /* Set a fixed height for the video container */
+  margin: 40px auto; /* Center the video container horizontally */
+  position: relative;
+}
+
+#video {
+  width: 100%; /* Make the video fill the width of its container */
+  height: 100%; /* Make the video fill the height of its container */
+  object-fit: cover; /* Ensure the video maintains its aspect ratio and covers the container */
+}
+
+/* Hide the play, mute, and fullscreen buttons */
+.controls button:nth-child(1),
+.controls button:nth-child(2),
+.controls button:nth-child(3) {
+  display: none;
+}
+
+.controls {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 5px;
+  border-radius: 5px;
+}
+
+button {
+  background-color: transparent;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin: 0 5px;
+}
+
+button:hover {
+  color: yellow;
+}
+
+/* Added styles to avoid overlapping */
+.team,
+.method,
+.con {
+  padding-top: 20px; /* Add some space above each section */
 }
