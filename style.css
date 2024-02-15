@@ -99,6 +99,7 @@ section.team .img {
 .t {
   display: flex;
   justify-content: space-around;
+  align-items: center;
 }
 .i1 {
   background-image: url("WhatsApp\ Image\ 2024-02-15\ at\ 18.19.49.jpeg");
@@ -126,7 +127,7 @@ section.team h1 {
   text-align: center;
 }
 .team {
-  height: 80vh;
+  height: 100vh;
 }
 .dataset {
   height: 100vh;
@@ -222,4 +223,7 @@ section.team h1 {
 .ii22 {
   font-size: 1.134rem;
   padding: 15px 20px;
+}
+.con {
+  height: 35vh;
 }
