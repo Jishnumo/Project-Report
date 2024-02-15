@@ -148,6 +148,59 @@
           pivotal in capturing crucial aspects of the speaker's voice and can
           act as input parameters for the machine learning model.
         </p>
+        <h2>Data <span>Preprocessing</span></h2>
+        <p class="i222">
+          The preprocessing of audio features is a crucial step in the
+          standardization and preparation of the data for model input. To
+          achieve this goal, the audio features undergo normalization, scaling,
+          and the formatting process to generate suitable arrays that can be
+          used for model training. Preprocessing guarantees that the data is in
+          a consistent format and is ready for the model to process it without
+          any inconsistencies or errors. By following these preprocessing steps,
+          the audio features can be optimized and utilized effectively, thereby
+          delivering improved results in the model's output.
+        </p>
+        <h2>Model <span>Architecture</span></h2>
+        <p class="i222">
+          The present study introduces a deep neural network architecture,
+          designed through the employment of TensorFlow's Keras API. The model
+          comprises several layers of densely connected neurons, which are
+          facilitated with activation functions, including ReLU, to introduce
+          non-linearity. The output layer employs the softmax function, which is
+          instrumental in predicting the probabilities of each speaker class.
+          The implementation of these components is critical, as it leads to the
+          accurate prediction of speaker classes in a given dataset.
+        </p>
+        <h2>Training <span>Configuration</span></h2>
+        <p class="i222">
+          The presented machine learning model has been trained to utilize the
+          Adam optimizer along with a sparse categorical cross-entropy loss
+          function. To prevent overfitting, the dataset has been partitioned
+          into training and validation sets. We have undertaken a comprehensive
+          experimentation and validation exercise to optimize hyperparameters
+          such as batch size, learning rate, and number of epochs. Our findings
+          indicate that the resulting model is expected to deliver optimal
+          performance, given the selected hyperparameters and training data
+        </p>
+        <h2>Evaluation</h2>
+        <p class="i222">
+          Upon completion of the training process, the model is subjected to
+          evaluation using a separate test set composed of audio samples that
+          were not used during the training phase. The performance of the model
+          is assessed using a set of standard evaluation metrics, which include
+          accuracy, precision, recall, and F1-score. These evaluation metrics
+          are critical in evaluating the model's ability to accurately identify
+          speakers. Precision measures the ratio of correctly identified
+          positive instances to the total number of positive instances. Recall,
+          on the other hand, measures the ratio of the number of actual positive
+          instances that were accurately classified to the total number of
+          positive instances. The F1-score represents the harmonic mean of
+          precision and recall, which provides a comprehensive evaluation of the
+          model's performance. These evaluation metrics are essential in
+          determining the efficacy of the model in accurately identifying
+          speakers. As such, they play a crucial role in assessing the model's
+          overall performance.
+        </p>
       </div>
     </section>
   </body>
